@@ -1,4 +1,41 @@
-<form id="form" action="http://manager/"
-method="POST"> <input name="username" value="hihi"> <input
-name="confirm" value="yes"> </form> <script> document.forms['form'].submit();
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto POST Form</title>
+</head>
+<body>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            // Dữ liệu cần gửi
+            const data = {
+                username: "hna",
+                confirm: "yes"
+            };
+
+            // Chuyển đổi dữ liệu sang JSON
+            const JSONdata = JSON.stringify(data);
+
+            // Gửi yêu cầu POST bằng fetch API
+            fetch("https://app", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSONdata,
+            })
+            .then(response => response.text())
+            .then(responseText => {
+                // Xử lý phản hồi từ server
+                console.log(responseText);
+                // Hiển thị phản hồi lên trang web
+                document.getElementById("response").innerText = responseText;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+
+    <div id="response">Waiting for response...</div>
+</body>
+</html>
