@@ -18,11 +18,10 @@
             const JSONdata = JSON.stringify(data);
 
             // Gửi yêu cầu POST bằng fetch API
-            fetch("http://45.122.249.68:20009/admin.php", {
+            fetch("http://app/admin.php", {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',
-                    "ngrok-skip-browser-warning": "69420",
                 },
                 body: JSONdata,
             })
